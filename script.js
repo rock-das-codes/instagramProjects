@@ -2,7 +2,7 @@ const messages = [
   "Hey, I am sorry I could not come",
   "I know how much you waited for me",
   "A really important work came so I could not come",
-  "Hey, don't worry, here is my hand, put the rakhi in it"
+  "Hey, don't worry, here is my hand, gimme the rakhi"
 ];
 
 const images = [
