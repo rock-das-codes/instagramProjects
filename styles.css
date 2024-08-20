@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
+  background-color: #7e7e7e;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -65,37 +65,56 @@ body {
 }
 
 .popup-image {
-  width: 100px;
+  width: 200px;
+  height: 170px;
+  background-color: transparent;
   margin-bottom: 15px;
-  border-radius: 50%;
+
+  
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .popup-text {
   font-size: 24px;
+  font-weight: 200;
   margin: 0;
 }
 @keyframes popup-slide-in {
   to {
-      bottom: 20px;
+      bottom: 40%;
   }
 }
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent url('stars.png') repeat;
-  background-size: 100px 100px;
-  animation: stars-animation 2s infinite linear;
-  z-index: -1;
+/* Background Stars using CSS only */
+.stars::before,
+.stars::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stars::before {
+    background-image: radial-gradient(circle, #fff 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: stars-twinkling 2s infinite ease-in-out alternate;
+}
+
+.stars::after {
+    background-image: radial-gradient(circle, #fff 2px, transparent 2px);
+    background-size: 100px 100px;
+    animation: stars-twinkling 3s infinite ease-in-out alternate;
+    opacity: 0.5;
 }
 
 /* Star blinking animation */
-@keyframes stars-animation {
-  from { background-position: 0 0; }
-  to { background-position: 100px 100px; }
+@keyframes stars-twinkling {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-20px); opacity: 0.6; }
 }
 #next-btn:hover {
   background-color: #0056b3;
@@ -111,7 +130,11 @@ body {
 
 #rakhi {
   position: absolute;
-  width: 50px;
+  scale: 0.04;
+  height:30px;
+  width:30px;
+  background-clip: border-box;
+  transform: rotate(90deg);
 }
 
 #hand-svg {

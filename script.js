@@ -21,7 +21,7 @@ const rakhi = document.getElementById('rakhi');
 const imageBox = document.getElementById('image-box');
 const cuteImage = document.getElementById('cute-image');
 const popup = document.getElementById('thank-you-popup');
-
+const backgroundMusic = document.getElementById('background-music');
 
 function showMessage() {
   if (currentIndex < messages.length) {
@@ -46,8 +46,8 @@ function handleNextClick() {
 }
 
 function moveRakhi(event) {
-  rakhi.style.left = event.pageX - 25 + 'px';
-  rakhi.style.top = event.pageY - 25 + 'px';
+  rakhi.style.left = event.pageX + 60 + 'px';
+  rakhi.style.top = event.pageY - 65 + 'px';
 
   const handRect = handSvg.getBoundingClientRect();
   const rakhiRect = rakhi.getBoundingClientRect();
