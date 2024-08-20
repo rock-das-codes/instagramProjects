@@ -9,7 +9,7 @@ const images = [
  "panda-1300187_1280.png",
   "crypanda.png",
   "panda-1722702_1280.png",
-  "https://cdn.pixabay.com/photo/2016/10/07/22/12/panda-1722702_1280.png"
+  "panda-154984_1280.png"
 ];
 
 let currentIndex = 0;
@@ -20,6 +20,8 @@ const handSvg = document.getElementById('hand-svg');
 const rakhi = document.getElementById('rakhi');
 const imageBox = document.getElementById('image-box');
 const cuteImage = document.getElementById('cute-image');
+const popup = document.getElementById('thank-you-popup');
+
 
 function showMessage() {
   if (currentIndex < messages.length) {
@@ -33,7 +35,6 @@ function showMessage() {
       rakhi.classList.remove('hidden');
   }
 }
-
 function handleNextClick() {
   currentIndex++;
   if (currentIndex < messages.length) {
@@ -57,12 +58,20 @@ function moveRakhi(event) {
       rakhiRect.top < handRect.bottom) {
       handSvg.classList.add('with-rakhi');
       setTimeout(() => {
-          alert("Rakhi tied successfully!");
-          rakhi.classList.add('hidden');
+          showPopup();
       }, 500);
       document.removeEventListener('mousemove', moveRakhi);
   }
 }
+
+function showPopup() {
+  popup.classList.remove('hidden');
+  backgroundMusic.play();
+  setTimeout(() => {
+      popup.style.bottom = '20px';
+  }, 100);
+}
+
 
 nextBtn.addEventListener('click', handleNextClick);
 showMessage();
