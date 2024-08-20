@@ -6,9 +6,9 @@ const messages = [
 ];
 
 const images = [
- "https://cdn.pixabay.com/photo/2016/10/07/22/12/panda-1722702_1280.png",
-  "https://cdn.pixabay.com/photo/2016/10/07/22/12/panda-1722702_1280.png",
-  "https://cdn.pixabay.com/photo/2016/10/07/22/12/panda-1722702_1280.png",
+ "panda-1300187_1280.png",
+  "crypanda.png",
+  "panda-1722702_1280.png",
   "https://cdn.pixabay.com/photo/2016/10/07/22/12/panda-1722702_1280.png"
 ];
 
